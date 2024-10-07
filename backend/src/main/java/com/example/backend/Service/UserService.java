@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,34 +23,45 @@ public class UserService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public ResponseEntity<User> editUser(String userId,UserDTO userDTO) {
-        Optional<User> optionalUserDetails = userRepository.findById(userId);
+    public User editUser(UserDTO userDTO) {
+        Optional<User> userOptional = userRepository.findById(userDTO.getId());
 
-        if(optionalUserDetails.isPresent()){
-            User userExisting = optionalUserDetails.get();
-            if(userDTO.name() != null && userDTO.name().isEmpty()){
-                userExisting.setName(userDTO.name());
-                System.out.println(userDTO.name());
+        if (userOptional.isPresent()) {
+            User user = userOptional.get();
+
+            // Verificar se o email precisa ser alterado
+            if (userDTO.getEmail() != null && !userDTO.getEmail().equals(user.getEmail())) {
+                // Verifique se já existe outro usuário com o email fornecido
+                Optional<User> userWithEmail = userRepository.findUserByEmail(userDTO.getEmail());
+                if (userWithEmail.isPresent() && !userWithEmail.get().getId().equals(userDTO.getId())) {
+                    throw new EmailAlreadyExistsException("Email already in use by another account");
+                } else {
+                    user.setEmail(userDTO.getEmail());  // Atualize o email
+                }
             }
-            if(userDTO.lastname() != null && userDTO.lastname().isEmpty()){
-                userExisting.setLastname(userDTO.lastname());
+
+            // Atualize os outros campos permitidos
+            if (userDTO.getName() != null) user.setName(userDTO.getName());
+            if (userDTO.getLastname() != null) user.setLastname(userDTO.getLastname());
+            if (userDTO.getNumber() != null) user.setNumber(userDTO.getNumber());
+
+            // Atualizar senha, se fornecida
+            if (userDTO.getPassword() != null) {
+                // Certifique-se de criptografar a senha antes de salvar
+                String encryptedPassword = passwordEncoder.encode(userDTO.getPassword());
+                user.setPassword(encryptedPassword);
             }
-            if(userDTO.number() != null && userDTO.number().isEmpty()){
-                userExisting.setNumber(userDTO.lastname());
-            }
-            if(userDTO.password() != null && userDTO.password().isEmpty()){
-                userExisting.setPassword(passwordEncoder.encode(userDTO.password()));
-            }
-            if(userDTO.email() != null && userDTO.email().isEmpty()){
-                userExisting.setEmail(userDTO.email());
-            }
-            User updateUser = userRepository.save(userExisting);
-            return ResponseEntity.status(HttpStatus.CREATED).body(updateUser);
-        }else{
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
+
+            // Persistir a atualização
+            return userRepository.save(user);
+        } else {
+            throw new UsernameNotFoundException("User not found with id: " + userDTO.getId());
         }
-
-
     }
 
+    public class EmailAlreadyExistsException extends RuntimeException {
+        public EmailAlreadyExistsException(String message) {
+            super(message);
+        }
+    }
 }

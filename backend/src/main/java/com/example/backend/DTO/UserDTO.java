@@ -1,4 +1,13 @@
 package com.example.backend.DTO;
 
-public record UserDTO(String email, String password, String name, String lastname, String number) {
+import lombok.Data;
+
+@Data
+public class UserDTO {
+    private String id;
+   private  String email;
+   private String password;
+   private String name;
+    private String lastname;
+    private String number;
 }
