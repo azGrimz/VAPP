@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
@@ -26,6 +27,7 @@ public class User implements UserDetails {
     private String name;
     private String lastname;
     private String number;
+    private UserRoles role;
 
     // Relacionamento um para muitos com a tabela modules
     @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
@@ -36,9 +38,10 @@ public class User implements UserDetails {
     @JsonBackReference
     private List<Feedback> feedback;
 
-    public User(String email, String password,String name,String lastname,String number){
+    public User(String email, String password, UserRoles role,String name,String lastname,String number){
         this.email = email;
         this.password = password;
+        this.role = role;
         this.name= name;
         this.lastname = lastname;
         this.number = number;
@@ -46,9 +49,9 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        if(this.role == UserRoles.ADMIN) return List.of(new SimpleGrantedAuthority("ROLE_ADMIN"), new SimpleGrantedAuthority("ROLE_USER"));
+        else return List.of(new SimpleGrantedAuthority("ROLE_USER"));
     }
-
 
     @Override
     public String getUsername() {

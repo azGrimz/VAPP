@@ -1,6 +1,7 @@
 package com.example.backend.Model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,6 +30,7 @@ public class Feedback {
     // Relacionamento muitos para um com a tabela users
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
+    @JsonIgnore
     private User user; // Aqui usamos o nome da classe User para referenciar a tabela
 
     public User getUser() {

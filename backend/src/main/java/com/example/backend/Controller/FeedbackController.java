@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -35,6 +36,28 @@ public class FeedbackController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build(); // Se o usuário não for encontrado
         }
 
+    }
+
+
+    @GetMapping("getAllFeedbacks")
+    public ResponseEntity<List<Feedback>> getAllFeedbacks() {
+        List<Feedback> feedbacks = feedbackService.getAllFeedbacks();
+        return ResponseEntity.ok(feedbacks); // Retorna HTTP 200 OK com a lista de feedbacks
+    }
+
+    // Novo endpoint para buscar feedbacks de um usuário específico
+    @GetMapping("getFeedbacksByUser/{userId}")
+    public ResponseEntity<List<Feedback>> getFeedbacksByUserId(@PathVariable String userId) {
+        List<Feedback> feedbacks = feedbackService.getFeedbacksByUserId(userId);
+        if (feedbacks.isEmpty()) {
+            return ResponseEntity.noContent().build(); // Retorna HTTP 204 se não houver feedbacks
+        }
+        return ResponseEntity.ok(feedbacks);
+    }
+
+    @DeleteMapping(value = "deleteFeedback/{id}")
+    public ResponseEntity<Boolean> deleteFeedback(@PathVariable String id ){
+        return feedbackService.deleteFeedback(id);
     }
 
 }

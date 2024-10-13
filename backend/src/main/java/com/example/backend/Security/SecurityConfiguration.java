@@ -21,8 +21,8 @@ public class SecurityConfiguration {
     @Autowired
     SecurityFilter securityFilter;
 
-    private static final String[] COMPANY_ROUTES = {
-            "/companyAPI/addCompany",
+    private static final String[] ADMIN_ROUTES = {
+            "feedbackAPI/deleteFeedback/",
             "/companyAPI/editComapny/",
 
     };
@@ -36,6 +36,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
                         .requestMatchers(HttpMethod.GET, "/companyAPI/getStore/**").permitAll()
+                     //   .requestMatchers(HttpMethod.DELETE, ADMIN_ROUTES).hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class)

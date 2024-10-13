@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -35,5 +36,21 @@ public class FeedbackService {
         Feedback createFeedback = feedbackRepository.save(feedback);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(createFeedback);
+    }
+
+
+
+    public List<Feedback> getAllFeedbacks() {
+        return feedbackRepository.findAll();
+    }
+
+    // Novo método para buscar feedbacks de um usuário específico
+    public List<Feedback> getFeedbacksByUserId(String userId) {
+        return feedbackRepository.findByUserId(userId);
+    }
+
+    public ResponseEntity<Boolean> deleteFeedback(String id){
+        feedbackRepository.deleteById(id);
+        return ResponseEntity.ok(!(feedbackRepository.findById(id)!=null));
     }
 }

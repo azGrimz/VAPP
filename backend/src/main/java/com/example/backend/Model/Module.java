@@ -1,5 +1,6 @@
 package com.example.backend.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,6 +24,7 @@ public class Module {
     private String status;
 
     // Relacionamento muitos para um com a tabela users
+    @JsonIgnore
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user; // Aqui usamos o nome da classe User para referenciar a tabela
