@@ -25,9 +25,8 @@ export default function m0() {
                 style={styles.image}
               />
             }
-            containerStyle={styles.centerContainer}
+            containerStyle={styles.header}
             leftContainerStyle={styles.item}
-            centerContainerStyle={styles.header}
           />
           <ThemedText style={styles.text}>EDUCAÇÃO FINANCEIRA</ThemedText>
           <View style={styles.stepContainer}>
@@ -155,10 +154,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     marginBottom: 10,
-  },
-  centerContainer: {
-    height: Dimensions.get("window").height * 0.1,
-    width: "100%",
   },
   headerText: {
     fontSize: 25,

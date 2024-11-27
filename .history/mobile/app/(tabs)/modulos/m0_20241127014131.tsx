@@ -25,9 +25,7 @@ export default function m0() {
                 style={styles.image}
               />
             }
-            containerStyle={styles.centerContainer}
-            leftContainerStyle={styles.item}
-            centerContainerStyle={styles.header}
+            containerStyle={styles.header}
           />
           <ThemedText style={styles.text}>EDUCAÇÃO FINANCEIRA</ThemedText>
           <View style={styles.stepContainer}>
@@ -130,11 +128,6 @@ const styles = StyleSheet.create({
   link: {
     color: "#112683",
   },
-  item: {
-    alignItems: "center",
-    marginBottom: 20,
-    backgroundColor: "#EBBA2D",
-  },
   buttonContainer: {
     marginTop: 20,
     marginBottom: 20,
@@ -153,12 +146,8 @@ const styles = StyleSheet.create({
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height * 0.1,
     flex: 1,
-    flexDirection: "row",
+    flexWra
     marginBottom: 10,
-  },
-  centerContainer: {
-    height: Dimensions.get("window").height * 0.1,
-    width: "100%",
   },
   headerText: {
     fontSize: 25,

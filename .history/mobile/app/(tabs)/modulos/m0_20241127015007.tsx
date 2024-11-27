@@ -29,6 +29,7 @@ export default function m0() {
             leftContainerStyle={styles.item}
             centerContainerStyle={styles.header}
           />
+          </View>
           <ThemedText style={styles.text}>EDUCAÇÃO FINANCEIRA</ThemedText>
           <View style={styles.stepContainer}>
             <ThemedText style={styles.text}>

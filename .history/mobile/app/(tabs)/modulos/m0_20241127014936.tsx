@@ -11,6 +11,8 @@ export default function m0() {
     <SafeAreaView>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.container}>
+          <View style={styles.headerContainer}
+
           <Header
             backgroundColor="#EBBA2D"
             centerComponent={
@@ -29,6 +31,7 @@ export default function m0() {
             leftContainerStyle={styles.item}
             centerContainerStyle={styles.header}
           />
+          </View>
           <ThemedText style={styles.text}>EDUCAÇÃO FINANCEIRA</ThemedText>
           <View style={styles.stepContainer}>
             <ThemedText style={styles.text}>

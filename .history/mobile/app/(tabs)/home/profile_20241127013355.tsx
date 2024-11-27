@@ -53,7 +53,7 @@ export default function Settings() {
           />
 
           <TouchableOpacity
-            style={styles.changeButton}
+            style={styles.loginButton}
             onPress={() => {
               if (password.length < 6) {
                 setPasswordError("Senha muito curta");
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     width: 300,
     paddingVertical: 10,
     borderRadius: 5,
-    backgroundColor: "#112683",
+    backgroundColor: '#112683',
     alignItems: "center",
     alignSelf: "center",
     marginTop: 20,

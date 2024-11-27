@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 import { Image, View, StyleSheet, Dimensions, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { Button } from "@rneui/themed";
-import { Header } from "@rneui/base";
+import { Header} from "@rneui/base";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function m0() {
@@ -11,24 +11,9 @@ export default function m0() {
     <SafeAreaView>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View style={styles.container}>
-          <Header
-            backgroundColor="#EBBA2D"
-            centerComponent={
-              <ThemedText style={styles.headerText}>
-                Conceitos Básicos
-              </ThemedText>
-            }
-            leftComponent={
-              <Image
-                resizeMode="contain"
-                source={require("@/assets/images/m0-img.png")}
-                style={styles.image}
-              />
-            }
-            containerStyle={styles.centerContainer}
-            leftContainerStyle={styles.item}
-            centerContainerStyle={styles.header}
-          />
+
+        <Header
+
           <ThemedText style={styles.text}>EDUCAÇÃO FINANCEIRA</ThemedText>
           <View style={styles.stepContainer}>
             <ThemedText style={styles.text}>
@@ -130,11 +115,6 @@ const styles = StyleSheet.create({
   link: {
     color: "#112683",
   },
-  item: {
-    alignItems: "center",
-    marginBottom: 20,
-    backgroundColor: "#EBBA2D",
-  },
   buttonContainer: {
     marginTop: 20,
     marginBottom: 20,
@@ -144,23 +124,10 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: "#333",
   },
-  image: {
-    width: Dimensions.get("window").width * 0.2,
-    height: Dimensions.get("window").height * 0.08,
-    marginBottom: 10,
-  },
-  header: {
-    width: Dimensions.get("window").width,
-    height: Dimensions.get("window").height * 0.1,
-    flex: 1,
-    flexDirection: "row",
-    marginBottom: 10,
-  },
-  centerContainer: {
-    height: Dimensions.get("window").height * 0.1,
-    width: "100%",
-  },
-  headerText: {
-    fontSize: 25,
+  welcomeText: {
+    fontWeight: "bold",
+    textAlign: "center",
+    fontSize: 26,
+    marginBottom: 40,
   },
 });

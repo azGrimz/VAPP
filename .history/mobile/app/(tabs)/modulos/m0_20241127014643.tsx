@@ -158,7 +158,7 @@ const styles = StyleSheet.create({
   },
   centerContainer: {
     height: Dimensions.get("window").height * 0.1,
-    width: "100%",
+    width: "100"
   },
   headerText: {
     fontSize: 25,

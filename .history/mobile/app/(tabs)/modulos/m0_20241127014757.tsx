@@ -25,9 +25,9 @@ export default function m0() {
                 style={styles.image}
               />
             }
-            containerStyle={styles.centerContainer}
+            containerStyle={styles.header}
             leftContainerStyle={styles.item}
-            centerContainerStyle={styles.header}
+            centerContainerStyle={styles.centerContainer}
           />
           <ThemedText style={styles.text}>EDUCAÇÃO FINANCEIRA</ThemedText>
           <View style={styles.stepContainer}>

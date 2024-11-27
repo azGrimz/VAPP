@@ -25,7 +25,7 @@ export default function m0() {
                 style={styles.image}
               />
             }
-            containerStyle={styles.centerContainer}
+            containerStyle={styles.header}
             leftContainerStyle={styles.item}
             centerContainerStyle={styles.header}
           />
@@ -157,8 +157,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   centerContainer: {
-    height: Dimensions.get("window").height * 0.1,
-    width: "100%",
+    width: Dimensions.get("window").width,
+    flex: 1,
+    flexDirection: "row",
   },
   headerText: {
     fontSize: 25,

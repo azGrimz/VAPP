@@ -25,7 +25,7 @@ export default function m0() {
                 style={styles.image}
               />
             }
-            containerStyle={styles.centerContainer}
+            containerStyle={styles.}
             leftContainerStyle={styles.item}
             centerContainerStyle={styles.header}
           />
@@ -73,7 +73,7 @@ export default function m0() {
             <ThemedText style={styles.text}>
               Por fim, a educação financeira é um aprendizado constante. Novos
               produtos financeiros, oportunidades de investimento e mudanças no
-              mercado exigem que as pessoas se mantenham atualizadas. Esse
+              mercado exigem que as pessoas se mcenterContainerantenham atualizadas. Esse
               contínuo aprendizado ajuda a construir uma relação mais saudável e
               segura com o dinheiro, contribuindo para decisões cada vez mais
               fundamentadas. Em resumo, a educação financeira é um caminho que

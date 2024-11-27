@@ -157,8 +157,9 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   centerContainer: {
-    height: Dimensions.get("window").height * 0.1,
-    width: "100%",
+
+    flex: 1,
+    flexDirection: "row",
   },
   headerText: {
     fontSize: 25,

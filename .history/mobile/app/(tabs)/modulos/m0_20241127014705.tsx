@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     height: Dimensions.get("window").height * 0.1,
     flex: 1,
     flexDirection: "row",
-    marginBottom: 10,
+    marginBottom: 30,
   },
   centerContainer: {
     height: Dimensions.get("window").height * 0.1,
