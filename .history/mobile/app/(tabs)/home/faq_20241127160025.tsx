@@ -2,7 +2,7 @@ import React from "react";
 import { ThemedText } from "@/components/ThemedText";
 import { Collapsible } from "@/components/Collapsible";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, StyleSheet, Dimensions } from "react-native";
+import { Image, View, StyleSheet, Dimensions } from "react-native";
 
 export default function faq() {
   return (
@@ -16,7 +16,7 @@ export default function faq() {
         <Collapsible title="O que é V-RAM?">
         <ThemedText style={styles.text}>
             V-RAM é o nome da nossa equipe de TCC, e é composto pelas inicias dos membros dela.
-            V de Vitória, R de Rebeca, A de Ana Júlia e M de Matheus e Murillo.
+            V de V
           
           </ThemedText>
       </Collapsible>

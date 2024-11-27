@@ -2,7 +2,7 @@ import React from "react";
 import { ThemedText } from "@/components/ThemedText";
 import { Collapsible } from "@/components/Collapsible";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { View, StyleSheet, Dimensions } from "react-native";
+import { Image, View, StyleSheet, Dimensions } from "react-native";
 
 export default function faq() {
   return (
@@ -15,8 +15,7 @@ export default function faq() {
       <View style={styles.stepContainer}>
         <Collapsible title="O que é V-RAM?">
         <ThemedText style={styles.text}>
-            V-RAM é o nome da nossa equipe de TCC, e é composto pelas inicias dos membros dela.
-            V de Vitória, R de Rebeca, A de Ana Júlia e M de Matheus e Murillo.
+            {" "}
           
           </ThemedText>
       </Collapsible>
@@ -27,11 +26,9 @@ export default function faq() {
       <ThemedText style={styles.text}>É incontestável a importância da educação financeira,
          especialmente no contexto brasileiro, onde 61% da população não consegue economizar,
           aponta uma pesquisa do Instituto Ipsos. A falta de ensino sobre finanças nas escolas e
-          a cultura evasiva quando o assunto é discutir dinheiro com jovens contribuem para esse cenário.
+           a cultura evasiva quando o assunto é discutir dinheiro com jovens contribuem para esse cenário.
             Para enfrentar esse desafio, a equipe V-RAM desenvolveu o V-RAM Finans, um aplicativo destinado
-            a jovens do Ensino Médio. O diferencial do V-RAM Finans é sua abordagem: utiliza uma linguagem
-              mais jovial e acessível, tornando o aprendizado sobre finanças menos intimidador e mais atraente
-              para os adolescentes.</ThemedText>
+             a jovens do Ensino Médio. O diferencial do V-RAM Finans é sua abordagem: utiliza uma linguagem mais jovial e acessível, tornando o aprendizado sobre finanças menos intimidador e mais atraente para os adolescentes.</ThemedText>
       </Collapsible>
       </View>
 
