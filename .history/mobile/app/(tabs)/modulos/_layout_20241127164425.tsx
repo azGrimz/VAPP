@@ -23,7 +23,7 @@ export default function RootLayout() {
       <Stack.Screen name="m5" options={{ title: "Outros" }} />
       <Stack.Screen name="m6" options={{ title: "Extras" }} />
       <Stack.Screen name="m7" options={{ title: "Revisão Final" }} />
-      <Stack.Screen name="planilha" options={{ title: "Parabéns!" }} />
+      <Stack.Screen name="planilha" options={{title: "Parabéns!"}}/>
     </Stack>
   );
 }
