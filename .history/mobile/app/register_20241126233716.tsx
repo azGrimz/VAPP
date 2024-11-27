@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import { HelloWave } from "@/components/HelloWave";
 import ParallaxScrollView from "@/components/ParallaxScrollView";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
@@ -63,10 +64,10 @@ export default function RegisterScreen() {
             }
           }}
         >
-          <Text style={styles.buttonText}>Cadastrar-se</Text>
+          <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <ThemedText style={{ marginHorizontal: 20 }}>
-          <Link href={"/"} style={{ fontSize: 14 }}>
+          <Link href={"/register"} style={{ fontSize: 14 }}>
             Possui conta?{" "}
             <Text style={{ fontSize: 14, color: "#112683" }}>Login</Text>
           </Link>

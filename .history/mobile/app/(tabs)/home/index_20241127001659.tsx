@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "expo-router";
-import { Image, StyleSheet, Dimensions, View } from "react-native";
+import { Image, StyleSheet, Dimensions, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { LinearProgress, Avatar } from "@rneui/themed";
@@ -10,7 +10,7 @@ import { Header } from "@rneui/base";
 export default function HomeScreen() {
   return (
     <SafeAreaView>
-      <View style={{ flexGrow: 1 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <ThemedView style={styles.container}>
           <ThemedView style={styles.titleContainer}>
             <ThemedText type="title" style={styles.welcomeText}>
@@ -121,7 +121,7 @@ export default function HomeScreen() {
             ></LinearProgress>
           </ThemedView>
         </ThemedView>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -132,11 +132,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
     marginTop: 30,
-    backgroundColor: "#EBBA2D",
   },
   stepContainer: {
     gap: 12,
-    backgroundColor: "#EBBA2D",
   },
   container: {
     padding: 0,
@@ -153,12 +151,11 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "center",
     padding: 10,
-    backgroundColor: "#EBBA2D",
   },
   row: {
     flexDirection: "row",
     gap: 15,
-    backgroundColor: "#EBBA2D",
+    backgroundColor: '#EBBA2D',
   },
   bar: {
     width: Dimensions.get("window").width,
@@ -167,7 +164,8 @@ const styles = StyleSheet.create({
   },
   barContainer: {
     marginTop:
-      Dimensions.get("window").height - Dimensions.get("window").height * 0.21,
+      Dimensions.get("window").height -
+      Dimensions.get("window").height * 0.0915,
     marginBottom: 0,
     position: "absolute",
   },

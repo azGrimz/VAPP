@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "expo-router";
-import { Image, StyleSheet, Dimensions, View } from "react-native";
+import { Image, StyleSheet, Dimensions, ScrollView } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { LinearProgress, Avatar } from "@rneui/themed";
@@ -10,7 +10,7 @@ import { Header } from "@rneui/base";
 export default function HomeScreen() {
   return (
     <SafeAreaView>
-      <View style={{ flexGrow: 1 }}>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <ThemedView style={styles.container}>
           <ThemedView style={styles.titleContainer}>
             <ThemedText type="title" style={styles.welcomeText}>
@@ -121,7 +121,7 @@ export default function HomeScreen() {
             ></LinearProgress>
           </ThemedView>
         </ThemedView>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 }
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   barContainer: {
     marginTop:
-      Dimensions.get("window").height - Dimensions.get("window").height * 0.21,
+      Dimensions.get("window").height - Dimensions.get("window").height * 0.06,
     marginBottom: 0,
     position: "absolute",
   },

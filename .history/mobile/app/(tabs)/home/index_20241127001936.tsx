@@ -10,7 +10,7 @@ import { Header } from "@rneui/base";
 export default function HomeScreen() {
   return (
     <SafeAreaView>
-      <View style={{ flexGrow: 1 }}>
+      <View contentContainerStyle={{ flexGrow: 1 }}>
         <ThemedView style={styles.container}>
           <ThemedView style={styles.titleContainer}>
             <ThemedText type="title" style={styles.welcomeText}>
@@ -167,7 +167,7 @@ const styles = StyleSheet.create({
   },
   barContainer: {
     marginTop:
-      Dimensions.get("window").height - Dimensions.get("window").height * 0.21,
+      Dimensions.get("window").height - Dimensions.get("window").height * 0.2,
     marginBottom: 0,
     position: "absolute",
   },
