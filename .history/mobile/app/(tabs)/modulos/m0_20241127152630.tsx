@@ -93,7 +93,12 @@ export default function m0() {
               </Link>
             </ThemedText>
           </View>
-          <Button title="INICIAR QUIZ" size="lg" color="#1E45B9" radius="lg" />
+            <Button
+              title="INICIAR QUIZ"
+              size="lg"
+              color="#1E45B9"
+              radius="lg"
+            />
         </View>
       </ScrollView>
     </SafeAreaView>

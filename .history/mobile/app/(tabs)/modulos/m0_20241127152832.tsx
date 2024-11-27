@@ -155,5 +155,5 @@ const styles = StyleSheet.create({
   },
   headerText: {
     fontSize: 25,
-  },
+  }
 });

@@ -2,7 +2,7 @@ import React from "react";
 import { ThemedText } from "@/components/ThemedText";
 import { Collapsible } from "@/components/Collapsible";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Image, View, StyleSheet, Dimensions } from "react-native";
+import { Image, View, StyleSheet, Dimensions, ScrollView } from "react-native";
 
 export default function faq() {
   return (
@@ -21,40 +21,28 @@ export default function faq() {
       </View>
 
       <View style={styles.stepContainer}>
-        <Collapsible title="O que é V-RAM?">
+        <Collapsible title="O app é totalmente gratuito?">
         <ThemedText style={styles.text}>
             {" "}
-          
+            Sim! Fornecemos tudo de forma gratuita e acessível.
           </ThemedText>
       </Collapsible>
       </View>
 
-      <View style={styles.stepContainer}>
-        <Collapsible title="Como atualizar minhas informações de perfil?">
-        <ThemedText style={styles.text}>
+
+          <ThemedText style={styles.titleText}>
+            P: 
+          </ThemedText>
+          <ThemedText style={styles.text}>
             {" "}
-            Acesse o menu, selecione "Perfil" e depois escolha a opção
+            R: Acesse o menu, selecione "Perfil" e depois escolha a opção
             "Atualizar Informações"
           </ThemedText>
-      </Collapsible>
-      </View>
-
-      <View style={styles.stepContainer}>
-        <Collapsible title="Quero enviar feedback sobre o app. É possível fazer isso?">
-        <ThemedText style={styles.text}>
-            {" "}
-          É sim! Nós recebemos feedback através da aba "Enviar Feedback" do menu, onde você pode escrever o que achar necessário e enviar para nós.
+          <ThemedText style={styles.titleText}>
+            P: Posso apagar a minha conta?
           </ThemedText>
-      </Collapsible>
-      </View>
-
-      <View style={styles.stepContainer}>
-        <Collapsible title="É possível deletar a minha conta?">
-        <ThemedText style={styles.text}>
-            {" "}
-          Claro que sim! É só acessar as configurações e clicar em "Deletar conta".
-          </ThemedText>
-      </Collapsible>
+          <ThemedText style={styles.text}> R: Sim!</ThemedText>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -62,7 +50,7 @@ export default function faq() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flexDirection: "row",
+    flexDirection: "row",Como atualizar minhas informações de perfil?
     alignItems: "center",
     gap: 12,
     paddingTop: 10,

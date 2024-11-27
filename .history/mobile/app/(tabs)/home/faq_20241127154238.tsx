@@ -2,7 +2,7 @@ import React from "react";
 import { ThemedText } from "@/components/ThemedText";
 import { Collapsible } from "@/components/Collapsible";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Image, View, StyleSheet, Dimensions } from "react-native";
+import { Image, View, StyleSheet, Dimensions, ScrollView } from "react-native";
 
 export default function faq() {
   return (
@@ -16,15 +16,6 @@ export default function faq() {
         <ThemedText style={styles.text}>
             {" "}
             Sim! Fornecemos tudo de forma gratuita e acessível.
-          </ThemedText>
-      </Collapsible>
-      </View>
-
-      <View style={styles.stepContainer}>
-        <Collapsible title="O que é V-RAM?">
-        <ThemedText style={styles.text}>
-            {" "}
-          
           </ThemedText>
       </Collapsible>
       </View>

@@ -2,7 +2,7 @@ import React from "react";
 import { ThemedText } from "@/components/ThemedText";
 import { Collapsible } from "@/components/Collapsible";
 import { SafeAreaView } from "react-native-safe-area-context";
-import { Image, View, StyleSheet, Dimensions } from "react-native";
+import { Image, View, StyleSheet, Dimensions, ScrollView } from "react-native";
 
 export default function faq() {
   return (
@@ -24,7 +24,7 @@ export default function faq() {
         <Collapsible title="O que é V-RAM?">
         <ThemedText style={styles.text}>
             {" "}
-          
+          Claro que sim! É só acessar as configurações e clicar em "Deletar conta".
           </ThemedText>
       </Collapsible>
       </View>
