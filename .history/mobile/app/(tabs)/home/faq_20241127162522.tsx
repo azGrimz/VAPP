@@ -10,7 +10,7 @@ export default function faq() {
       <View style={styles.container}>
         <ThemedText style={styles.titleText}>
           Perguntas Frequentas (FAQ)
-        </ThemedText>
+        </ThemedText>npm install --save react-native-collapsible
 
         <View style={styles.stepContainer}>
           <Collapsible title="O que é V-RAM?">
@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 8,
     padding: 8,
-    backgroundColor: "#EBBA2D",
   },
   container: {
     padding: 5,

@@ -23,7 +23,7 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Por que vocês criaram o V-RAM Finans?">
+          <Collapsible title="Por que vocês a criarem o V-RAM Finans?">
             <ThemedText style={styles.text}>
               É incontestável a importância da educação financeira,
               especialmente no contexto brasileiro, onde 61% da população não
@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 8,
     padding: 8,
-    backgroundColor: "#EBBA2D",
   },
   container: {
     padding: 5,

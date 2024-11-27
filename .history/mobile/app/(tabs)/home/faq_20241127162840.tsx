@@ -13,7 +13,7 @@ export default function faq() {
         </ThemedText>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="O que é V-RAM?">
+          <Collapsible style={styles.collapsible} title="O que é V-RAM?">
             <ThemedText style={styles.text}>
               V-RAM é o nome da nossa equipe de TCC, e é composto pelas inicias
               dos membros dela. V de Vitória, R de Rebeca, A de Ana Júlia e M de
@@ -23,7 +23,10 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Por que vocês criaram o V-RAM Finans?">
+          <Collapsible
+            style={styles.collapsible}
+            title="Por que vocês criaram o V-RAM Finans?"
+          >
             <ThemedText style={styles.text}>
               É incontestável a importância da educação financeira,
               especialmente no contexto brasileiro, onde 61% da população não
@@ -41,7 +44,10 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Como atualizar meu perfil?">
+          <Collapsible
+            style={styles.collapsible}
+            title="Como atualizar meu perfil?"
+          >
             <ThemedText style={styles.text}>
               {" "}
               Acesse o menu, selecione "Perfil" e depois escolha a opção
@@ -51,7 +57,10 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="O app é totalmente gratuito?">
+          <Collapsible
+            style={styles.collapsible}
+            title="O app é totalmente gratuito?"
+          >
             <ThemedText style={styles.text}>
               {" "}
               Sim! Fornecemos tudo de forma gratuita e acessível.
@@ -60,7 +69,10 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Quero enviar feedback sobre o app. É possível fazer isso?">
+          <Collapsible
+            style={styles.collapsible}
+            title="Quero enviar feedback sobre o app. É possível fazer isso?"
+          >
             <ThemedText style={styles.text}>
               {" "}
               É sim! Nós recebemos feedback através da aba "Enviar Feedback" do
@@ -71,7 +83,10 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="É possível deletar a minha conta?">
+          <Collapsible
+            style={styles.collapsible}
+            title="É possível deletar a minha conta?"
+          >
             <ThemedText style={styles.text}>
               {" "}
               Claro que sim! É só acessar as configurações e clicar em "Deletar
@@ -97,7 +112,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 8,
     padding: 8,
-    backgroundColor: "#EBBA2D",
   },
   container: {
     padding: 5,
@@ -106,6 +120,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#EBBA2D",
     width: "100%",
     height: Dimensions.get("window").height,
+  },
+  collapsible: {
+    color: "#EBBA2D",
   },
   link: {
     color: "#112683",

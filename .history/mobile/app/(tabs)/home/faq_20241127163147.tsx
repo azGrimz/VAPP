@@ -114,6 +114,7 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 16,
     color: "#333",
+    backgroundColor: "#EBBA2D",
   },
   titleText: {
     fontWeight: "bold",

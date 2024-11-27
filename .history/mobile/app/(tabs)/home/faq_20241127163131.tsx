@@ -107,6 +107,9 @@ const styles = StyleSheet.create({
     width: "100%",
     height: Dimensions.get("window").height,
   },
+  collapsible: {
+    backgroundColor: "#EBBA2D",
+  },
   link: {
     color: "#112683",
   },

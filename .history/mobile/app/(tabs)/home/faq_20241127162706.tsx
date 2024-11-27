@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 8,
     padding: 8,
-    backgroundColor: "#EBBA2D",
   },
   container: {
     padding: 5,
@@ -106,6 +105,9 @@ const styles = StyleSheet.create({
     backgroundColor: "#EBBA2D",
     width: "100%",
     height: Dimensions.get("window").height,
+  },
+  collapsible: {
+    backgroundColor: 
   },
   link: {
     color: "#112683",

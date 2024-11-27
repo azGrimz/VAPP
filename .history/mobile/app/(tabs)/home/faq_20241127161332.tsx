@@ -23,7 +23,7 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Por que vocês criaram o V-RAM Finans?">
+          <Collapsible title="O que levou vocês a criarem o V-RAM Finans?">
             <ThemedText style={styles.text}>
               É incontestável a importância da educação financeira,
               especialmente no contexto brasileiro, onde 61% da população não
@@ -41,7 +41,7 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Como atualizar meu perfil?">
+          <Collapsible title="Como atualizar minhas informações de perfil?">
             <ThemedText style={styles.text}>
               {" "}
               Acesse o menu, selecione "Perfil" e depois escolha a opção
@@ -89,19 +89,19 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 12,
-    marginBottom: 8,
     paddingTop: 10,
   },
   stepContainer: {
     gap: 12,
     marginBottom: 8,
-    marginTop: 8,
     padding: 8,
-    backgroundColor: "#EBBA2D",
+    backgroundColor: ""
   },
   container: {
     padding: 5,
     margin: 0,
+    alignItems: "left",
+    alignContent: "left",
     flexGrow: 1,
     backgroundColor: "#EBBA2D",
     width: "100%",

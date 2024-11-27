@@ -37,47 +37,7 @@ export default function faq() {
               aprendizado sobre finanças menos intimidador e mais atraente para
               os adolescentes.
             </ThemedText>
-          </Collapsible>
         </View>
-
-        <View style={styles.stepContainer}>
-          <Collapsible title="Como atualizar meu perfil?">
-            <ThemedText style={styles.text}>
-              {" "}
-              Acesse o menu, selecione "Perfil" e depois escolha a opção
-              "Atualizar Informações"
-            </ThemedText>
-          </Collapsible>
-        </View>
-
-        <View style={styles.stepContainer}>
-          <Collapsible title="O app é totalmente gratuito?">
-            <ThemedText style={styles.text}>
-              {" "}
-              Sim! Fornecemos tudo de forma gratuita e acessível.
-            </ThemedText>
-          </Collapsible>
-        </View>
-
-        <View style={styles.stepContainer}>
-          <Collapsible title="Quero enviar feedback sobre o app. É possível fazer isso?">
-            <ThemedText style={styles.text}>
-              {" "}
-              É sim! Nós recebemos feedback através da aba "Enviar Feedback" do
-              menu, onde você pode escrever o que achar necessário e enviar para
-              nós.
-            </ThemedText>
-          </Collapsible>
-        </View>
-
-        <View style={styles.stepContainer}>
-          <Collapsible title="É possível deletar a minha conta?">
-            <ThemedText style={styles.text}>
-              {" "}
-              Claro que sim! É só acessar as configurações e clicar em "Deletar
-              conta".
-            </ThemedText>
-          </Collapsible>
         </View>
       </View>
     </SafeAreaView>

@@ -97,7 +97,6 @@ const styles = StyleSheet.create({
     marginBottom: 8,
     marginTop: 8,
     padding: 8,
-    backgroundColor: "#EBBA2D",
   },
   container: {
     padding: 5,
@@ -107,6 +106,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: Dimensions.get("window").height,
   },
+  
   link: {
     color: "#112683",
   },
