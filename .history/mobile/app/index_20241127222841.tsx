@@ -14,9 +14,10 @@ import { Link } from "expo-router";
 import { useState } from "react";
 import CustomInput from "../components/CustomInputs";
 import { SafeAreaView } from "react-native-safe-area-context";
-import AsyncStorage from "@react-native-async-storage/async-storage";
-import blogFetch from "../axios/config";
-import { useRouter } from "expo-router";
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import blogFetch from '../axios/config';
+import { useRouter } from 'expo-router';
+
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -26,26 +27,26 @@ export default function HomeScreen() {
 
   const handleLogin = async () => {
     try {
-      const response = await blogFetch.post("/auth/login", {
-        email: email,
-        password: password,
-      });
+        const response = await blogFetch.post('/auth/login', {
+            email: email, password: password
+        });
 
-      const data = response.data;
+        const data = response.data;
+       
+       // console.log(data.message)
+        console.log(JSON.stringify(data))
+        await AsyncStorage.setItem('@token', JSON.stringify(data.token))
+        await AsyncStorage.setItem('@id', JSON.stringify(data.id))
+        await AsyncStorage.setItem('@role', JSON.stringify(data.role))
 
-      // console.log(data.message)
-      console.log(JSON.stringify(data));
-      await AsyncStorage.setItem("@token", JSON.stringify(data.token));
-      await AsyncStorage.setItem("@id", JSON.stringify(data.id));
-      await AsyncStorage.setItem("@role", JSON.stringify(data.role));
-
-      setEmail("");
-      setPassword("");
-      router.push("/home");
+        setEmail('');
+        setPassword('');
+        router.push('/home')
+        
     } catch (error) {
-      alert(error);
+        alert(error);
     }
-  };
+};
 
   return (
     <ParallaxScrollView
@@ -88,11 +89,11 @@ export default function HomeScreen() {
             if (password.length < 6) {
               setPasswordError("Senha muito curta");
             } else {
-              handleLogin();
+              handleLogin()
             }
-          }}
+          }} 
         >
-          <Text style={styles.buttonText}>Login</Text>
+            <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <ThemedText style={{ marginHorizontal: 20 }}>
           <Link href={"/register"} style={{ fontSize: 14 }}>
