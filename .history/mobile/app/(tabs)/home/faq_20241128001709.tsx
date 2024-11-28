@@ -13,7 +13,7 @@ export default function faq() {
         </ThemedText>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Qual é o significado de V-RAM?">
+          <Collapsible title="O que é V-RAM?">
             <ThemedText style={styles.text}>
               V-RAM é o nome da nossa equipe de TCC, e é composto pelas inicias
               dos membros dela. V de Vitória, R de Rebeca, A de Ana Júlia e M de
@@ -23,7 +23,7 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Por que vocês criaram o V-RAM Finans?">
+          <Collapsible title="O que levou vocês a criarem o V-RAM Finans?">
             <ThemedText style={styles.text}>
               É incontestável a importância da educação financeira,
               especialmente no contexto brasileiro, onde 61% da população não
@@ -41,6 +41,16 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
+          <Collapsible title="Como atualizar minhas informações de perfil?">
+            <ThemedText style={styles.text}>
+              {" "}
+              Acesse o menu, selecione "Perfil" e depois escolha a opção
+              "Atualizar Informações"
+            </ThemedText>
+          </Collapsible>
+        </View>
+
+        <View style={styles.stepContainer}>
           <Collapsible title="O app é totalmente gratuito?">
             <ThemedText style={styles.text}>
               {" "}
@@ -50,22 +60,12 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="É possível enviar feedback?">
+          <Collapsible title="Quero enviar feedback sobre o app. É possível fazer isso?">
             <ThemedText style={styles.text}>
               {" "}
               É sim! Nós recebemos feedback através da aba "Enviar Feedback" do
               menu, onde você pode escrever o que achar necessário e enviar para
               nós.
-            </ThemedText>
-          </Collapsible>
-        </View>
-
-        <View style={styles.stepContainer}>
-          <Collapsible title="É possível atualizar a minha conta?">
-            <ThemedText style={styles.text}>
-              {" "}
-              Acesse o menu, selecione "Perfil", atualize o que quiser e depois
-              clique em "Mudar".
             </ThemedText>
           </Collapsible>
         </View>
@@ -93,9 +93,8 @@ const styles = StyleSheet.create({
   },
   stepContainer: {
     gap: 12,
-    marginBottom: 8,
-    marginTop: 18,
-    padding: 4,
+    marginBottom: 20,
+    marginTop: 10
   },
   container: {
     padding: 5,

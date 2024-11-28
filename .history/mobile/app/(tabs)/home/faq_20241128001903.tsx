@@ -13,7 +13,7 @@ export default function faq() {
         </ThemedText>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Qual é o significado de V-RAM?">
+          <Collapsible title="O que é V-RAM?">
             <ThemedText style={styles.text}>
               V-RAM é o nome da nossa equipe de TCC, e é composto pelas inicias
               dos membros dela. V de Vitória, R de Rebeca, A de Ana Júlia e M de
@@ -23,7 +23,7 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
-          <Collapsible title="Por que vocês criaram o V-RAM Finans?">
+          <Collapsible title="O que levou vocês a criarem o V-RAM Finans?">
             <ThemedText style={styles.text}>
               É incontestável a importância da educação financeira,
               especialmente no contexto brasileiro, onde 61% da população não
@@ -36,6 +36,16 @@ export default function faq() {
               utiliza uma linguagem mais jovial e acessível, tornando o
               aprendizado sobre finanças menos intimidador e mais atraente para
               os adolescentes.
+            </ThemedText>
+          </Collapsible>
+        </View>
+
+        <View style={styles.stepContainer}>
+          <Collapsible title="Como atualizar minha conta?">
+            <ThemedText style={styles.text}>
+              {" "}
+              Acesse o menu, selecione "Perfil", atualize o que quiser e depois
+              clique em "Mudar".
             </ThemedText>
           </Collapsible>
         </View>
@@ -56,16 +66,6 @@ export default function faq() {
               É sim! Nós recebemos feedback através da aba "Enviar Feedback" do
               menu, onde você pode escrever o que achar necessário e enviar para
               nós.
-            </ThemedText>
-          </Collapsible>
-        </View>
-
-        <View style={styles.stepContainer}>
-          <Collapsible title="É possível atualizar a minha conta?">
-            <ThemedText style={styles.text}>
-              {" "}
-              Acesse o menu, selecione "Perfil", atualize o que quiser e depois
-              clique em "Mudar".
             </ThemedText>
           </Collapsible>
         </View>

@@ -50,22 +50,22 @@ export default function faq() {
         </View>
 
         <View style={styles.stepContainer}>
+          <Collapsible title="É possível atualizar a minha conta?">
+            <ThemedText style={styles.text}>
+              {" "}
+              Acesse o menu, selecione "Perfil", atualize o que quiser e depois
+              clique em "Mudar".
+            </ThemedText>
+          </Collapsible>
+        </View>
+
+        <View style={styles.stepContainer}>
           <Collapsible title="É possível enviar feedback?">
             <ThemedText style={styles.text}>
               {" "}
               É sim! Nós recebemos feedback através da aba "Enviar Feedback" do
               menu, onde você pode escrever o que achar necessário e enviar para
               nós.
-            </ThemedText>
-          </Collapsible>
-        </View>
-
-        <View style={styles.stepContainer}>
-          <Collapsible title="É possível atualizar a minha conta?">
-            <ThemedText style={styles.text}>
-              {" "}
-              Acesse o menu, selecione "Perfil", atualize o que quiser e depois
-              clique em "Mudar".
             </ThemedText>
           </Collapsible>
         </View>

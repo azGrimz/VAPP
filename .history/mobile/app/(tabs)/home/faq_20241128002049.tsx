@@ -60,15 +60,7 @@ export default function faq() {
           </Collapsible>
         </View>
 
-        <View style={styles.stepContainer}>
-          <Collapsible title="É possível atualizar a minha conta?">
-            <ThemedText style={styles.text}>
-              {" "}
-              Acesse o menu, selecione "Perfil", atualize o que quiser e depois
-              clique em "Mudar".
-            </ThemedText>
-          </Collapsible>
-        </View>
+        
 
         <View style={styles.stepContainer}>
           <Collapsible title="É possível deletar a minha conta?">
