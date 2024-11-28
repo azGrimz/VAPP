@@ -96,24 +96,22 @@ export default function m0() {
               </Link>
             </ThemedText>
 
-            <ThemedText style={styles.text}>
+            <ThemedText>
               Texto retirado do livro: Educação Financeira comportamental:
               aprendendo e refletindo em família
             </ThemedText>
-            <ThemedText style={styles.text}>
+            <ThemedText>
               Texto retirado do site:
               https://dicadeteatro.com.br/veja-conceitos-basicos-de-educacao-financeira-que-voce-deveria-conhecer/
             </ThemedText>
           </View>
-          <View style={styles.buttonContainer}>
-            <Button
-              title="INICIAR QUIZ"
-              size="lg"
-              color="#1E45B9"
-              radius="lg"
-              onPress={() => router.push(`./quiz/quizScreen?quizId=${1}`)}
-            />
-          </View>
+          <Button
+            title="INICIAR QUIZ"
+            size="lg"
+            color="#1E45B9"
+            radius="lg"
+            onPress={() => router.push(`./quiz/quizScreen?quizId=${1}`)}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>

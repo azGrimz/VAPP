@@ -1,7 +1,10 @@
+import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
 //quizzes em ordem.
 //Ordem das questões: 0, 1, 2, 3.
 
-const quizzes = [
+export const quizzes = [
     {
       id: 1,
       title: 'Conceitos Básicos',
@@ -32,18 +35,18 @@ const quizzes = [
         },
         {
           question: 'Um dos benefícios do hábito de poupar é:',
-          options: ['Acumular dinheiro para o futuro e criar uma reserva de emergência.',
-             'Aumentar o capital de forma rápida e arriscada.',
-              'Eliminar completamente a necessidade de planejamento financeiro.',
-               'Reduzir o custo de investimentos de alto risco.'],
-          correctAnswer: 0,
+          options: ['Fazer uma poupança para o futuro.',
+             'Avaliar os produtos financeiros disponíveis.',
+              'Comprar ações no mercado de capitais.',
+               'Planejar financeiramente para controlar gastos e definir metas.'],
+          correctAnswer: 3,
         },
         {
-          question: 'Qual é a principal causa do endividamento de 77% das famílias brasileiras?',
-          options: ['Falta de controle nos gastos e falta de metas financeiras claras.',
-             'Crescimento do desemprego e aumento da informalidade no trabalho.',
-              'Alta dos preços de bens e serviços essenciais, como alimentação e energia.',
-               'Uso frequente de crédito fácil e cartões de crédito sem planejamento.'],
+          question: 'O primeiro passo da educação financeira é:',
+          options: ['Fazer uma poupança para o futuro.',
+             'Avaliar os produtos financeiros disponíveis.',
+              'Comprar ações no mercado de capitais.',
+               'Planejar financeiramente para controlar gastos e definir metas.'],
           correctAnswer: 3,
         },
       ],
@@ -57,4 +60,3 @@ const quizzes = [
 
   ];
   
-  export default quizzes;

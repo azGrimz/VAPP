@@ -9,6 +9,7 @@ const quizzes = [
         {
           question: 'A educação financeira é importante porque:',
           options: ['Facilita a compra de bens de alto valor com parcelas longas.',
+            
              'Garante estabilidade financeira e ajuda a tomar decisões mais fundamentadas.',
               'Evita que a pessoa se preocupe com a aposentadoria.',
                'Permite endividamento consciente e estratégico.'],

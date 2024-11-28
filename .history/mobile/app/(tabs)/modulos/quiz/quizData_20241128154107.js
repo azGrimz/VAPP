@@ -1,7 +1,10 @@
+import React from 'react';
+import { View, Text, Button, StyleSheet } from 'react-native';
+
 //quizzes em ordem.
 //Ordem das questões: 0, 1, 2, 3.
 
-const quizzes = [
+export const quizzes = [
     {
       id: 1,
       title: 'Conceitos Básicos',
@@ -43,7 +46,7 @@ const quizzes = [
           options: ['Falta de controle nos gastos e falta de metas financeiras claras.',
              'Crescimento do desemprego e aumento da informalidade no trabalho.',
               'Alta dos preços de bens e serviços essenciais, como alimentação e energia.',
-               'Uso frequente de crédito fácil e cartões de crédito sem planejamento.'],
+               'Planejar financeiramente para controlar gastos e definir metas.'],
           correctAnswer: 3,
         },
       ],
@@ -57,4 +60,3 @@ const quizzes = [
 
   ];
   
-  export default quizzes;
