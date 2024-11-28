@@ -11,7 +11,7 @@ export default function faq() {
         <ThemedText style={styles.titleText}>
           Perguntas Frequentas (FAQ)
         </ThemedText>
-
+      
       <View style={styles.stepContainer}>
         <Collapsible title="O que é V-RAM?">
         <ThemedText style={styles.text}>
@@ -70,6 +70,7 @@ export default function faq() {
           Claro que sim! É só acessar as configurações e clicar em "Deletar conta".
           </ThemedText>
       </Collapsible>
+      </View>
       </View>
     </SafeAreaView>
   );

@@ -13,12 +13,38 @@ import { Link } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import CustomInput from "../components/CustomInputs";
 import { useState } from "react";
+import blogFetch from '../axios/config';
+import { useRouter } from 'expo-router';
+
+
 
 export default function RegisterScreen() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmpassword, setConfirmPassword] = useState("");
   const [login, setLogin] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const handleRegister = async () => {
+ 
+    try {
+        if(password  != confirmpassword){
+            alert("Senhas diferentes")
+        }else{
+            const response = await blogFetch.post('/auth/register', {
+              name: login, email: email, password: password, role : "USER"
+            });
+
+            const data = response.data;
+            alert('Cadastrado com sucesso');
+            router.push('/')
+        }      
+    } catch (error) {
+        console.log(error)
+    }
+};
+  
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#112683", dark: "#1D3D47" }}
@@ -37,7 +63,7 @@ export default function RegisterScreen() {
         </ThemedText>
         <CustomInput
           containerStyle={{ marginHorizontal: 20 }}
-          placeholder={"Login"}
+          placeholder={"Nome"}
           onChangeText={setLogin}
         />
         <CustomInput
@@ -52,14 +78,20 @@ export default function RegisterScreen() {
           error={passwordError}
           secureTextEntry
         />
-
+        <CustomInput
+          containerStyle={{ marginHorizontal: 20, marginTop: 10 }}
+          placeholder={"Confirme a senha"}
+          onChangeText={setConfirmPassword}
+          error={passwordError}
+          secureTextEntry
+        />
         <TouchableOpacity
           style={styles.loginButton}
           onPress={() => {
             if (password.length < 6) {
               setPasswordError("Senha muito curta");
             } else {
-              setPasswordError("");
+              handleRegister()
             }
           }}
         >

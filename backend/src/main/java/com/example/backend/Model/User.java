@@ -25,8 +25,6 @@ public class User implements UserDetails {
     private String email;
     private String password;
     private String name;
-    private String lastname;
-    private String number;
     private UserRoles role;
 
     // Relacionamento um para muitos com a tabela modules
@@ -38,13 +36,12 @@ public class User implements UserDetails {
     @JsonBackReference
     private List<Feedback> feedback;
 
-    public User(String email, String password, UserRoles role,String name,String lastname,String number){
+    public User(String email, String password, UserRoles role,String name){
         this.email = email;
         this.password = password;
         this.role = role;
         this.name= name;
-        this.lastname = lastname;
-        this.number = number;
+
     }
 
     @Override
