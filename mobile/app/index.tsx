@@ -14,11 +14,40 @@ import { Link } from "expo-router";
 import { useState } from "react";
 import CustomInput from "../components/CustomInputs";
 import { SafeAreaView } from "react-native-safe-area-context";
+import AsyncStorage from '@react-native-async-storage/async-storage'
+import blogFetch from '../axios/config';
+import { useRouter } from 'expo-router';
+
 
 export default function HomeScreen() {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
+
+  const handleLogin = async () => {
+    try {
+        const response = await blogFetch.post('/auth/login', {
+            email: email, password: password
+        });
+
+        const data = response.data;
+       
+       // console.log(data.message)
+        console.log(JSON.stringify(data))
+        await AsyncStorage.setItem('@token', JSON.stringify(data.token))
+        await AsyncStorage.setItem('@id', JSON.stringify(data.id))
+        await AsyncStorage.setItem('@role', JSON.stringify(data.role))
+
+        setEmail('');
+        setPassword('');
+        router.push('/home')
+        
+    } catch (error) {
+        alert(error);
+    }
+};
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#112683", dark: "#112683" }}
@@ -44,12 +73,12 @@ export default function HomeScreen() {
         <CustomInput
           containerStyle={{ marginHorizontal: 20 }}
           placeholder={"Email"}
-          onChangeText={setEmail}
+          onChangeText={(text) => setEmail(text)}
         />
         <CustomInput
           containerStyle={{ marginHorizontal: 20, marginTop: 10 }}
           placeholder={"Password"}
-          onChangeText={setPassword}
+          onChangeText={(text) => setPassword(text)}
           error={passwordError}
           secureTextEntry
         />
@@ -60,13 +89,11 @@ export default function HomeScreen() {
             if (password.length < 6) {
               setPasswordError("Senha muito curta");
             } else {
-              setPasswordError("");
+              handleLogin()
             }
-          }}
+          }} 
         >
-          <Link href={"/home"}>
             <Text style={styles.buttonText}>Login</Text>
-          </Link>
         </TouchableOpacity>
         <ThemedText style={{ marginHorizontal: 20 }}>
           <Link href={"/register"} style={{ fontSize: 14 }}>

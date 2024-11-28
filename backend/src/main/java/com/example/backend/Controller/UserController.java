@@ -24,6 +24,12 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @GetMapping("/getUser/{userId}")
+    public ResponseEntity<UserDTO> getUser(@PathVariable String userId){
+        UserDTO userDTO = userService.getUser(userId);
+        return ResponseEntity.ok(userDTO);
+
+    }
 
     @PutMapping("/editUser/{userId}")
     public ResponseEntity<User> editUser(@PathVariable String userId, @RequestBody UserDTO userDTO) {

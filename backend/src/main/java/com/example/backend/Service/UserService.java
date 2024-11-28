@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -22,6 +23,17 @@ public class UserService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    public UserDTO getUser(String userId){
+
+            Optional<User> userOptional = userRepository.findById(userId);
+            User user =userOptional.get();
+            UserDTO userDTO = new UserDTO();
+            userDTO.setName(user.getName());
+            userDTO.setEmail(user.getEmail());
+            userDTO.setPassword(user.getPassword());
+            return userDTO;
+    }
 
     public User editUser(UserDTO userDTO) {
         Optional<User> userOptional = userRepository.findById(userDTO.getId());
@@ -42,9 +54,6 @@ public class UserService {
 
             // Atualize os outros campos permitidos
             if (userDTO.getName() != null) user.setName(userDTO.getName());
-            if (userDTO.getLastname() != null) user.setLastname(userDTO.getLastname());
-            if (userDTO.getNumber() != null) user.setNumber(userDTO.getNumber());
-
             // Atualizar senha, se fornecida
             if (userDTO.getPassword() != null) {
                 // Certifique-se de criptografar a senha antes de salvar
