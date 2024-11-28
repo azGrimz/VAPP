@@ -87,6 +87,20 @@ export default function Settings() {
           console.log(error);
       }
     }
+    const handleLogout = async () => {
+      try {
+        await AsyncStorage.removeItem('@id')
+        await AsyncStorage.removeItem('@token')
+        await AsyncStorage.removeItem('@role')
+        alert('Você deslogou da sua conta')
+        router.push('/')
+       // navigation.navigate('App', { screen: 'Login' });
+      } catch(e) {
+        alert('Não foi possivel fazer o logout')
+      }
+    
+      console.log('Done.')
+    } 
 
   useEffect(() => {
     getUsuario();
@@ -94,6 +108,10 @@ export default function Settings() {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
+        <TouchableOpacity onPress={handleLogout} style={{width:120,flexDirection:'row',alignContent:'flex-start',justifyContent:'flex-start',padding:5}}>
+        <Ionicons name="log-out" size={25} color="white" />
+        <Text style={{fontSize:20, color:'#fff'}}>Sair</Text>
+        </TouchableOpacity>
         <View style={styles.userContent}>
           <View
             style={{
@@ -104,6 +122,7 @@ export default function Settings() {
               flexDirection: "column",
               justifyContent: "center",
               alignItems: "center",
+              marginBottom:10
             }}
           >
             <Ionicons name="people-circle" size={120} color="gray" />

@@ -1,4 +1,4 @@
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItem, DrawerItemList } from "@react-navigation/drawer";
 import { Drawer } from "expo-router/drawer";
 import { Text, View, StyleSheet } from "react-native";
 import { Stack } from "expo-router";
@@ -6,12 +6,21 @@ const DrawerN = createDrawerNavigator;
 
 export default function Layout() {
   return (
-    <Drawer>
-      <View style={{ alignItems: "center", marginBottom: 20 }}>
-        <Text style={{ textAlign: "center", fontSize: 18, fontWeight: "bold" }}>
-          Code With Abdul
-        </Text>
-      </View>
+    <Drawer screenOptions={{
+      drawerStyle: {
+
+        backgroundColor: '#112683',
+        width: 240,
+      },
+      drawerLabelStyle: {
+        color: '#fff',
+        fontSize: 15,
+        fontFamily: 'Georgia',
+      },
+      drawerActiveTintColor: 'white',
+      drawerActiveBackgroundColor: '#003CB3',
+    }}
+    >
       <Drawer.Screen
         name="index"
         options={{

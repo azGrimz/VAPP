@@ -89,6 +89,7 @@ export default function HomeScreen() {
               setPasswordError("Senha muito curta");
             } else {
               handleLogin();
+              //router.push('/home')
             }
           }}
         >
