@@ -1,17 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "expo-router";
 import { Image, StyleSheet, Dimensions, View } from "react-native";
 import { ThemedText } from "@/components/ThemedText";
 import { ThemedView } from "@/components/ThemedView";
 import { LinearProgress } from "@rneui/themed";
+import blogFetch from "../../../axios/config";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 export default function HomeScreen() {
+  const [name, setname] = useState('');
+  const getUserName = async () => {
+    const id = await AsyncStorage.getItem('@id');
+    const token = await AsyncStorage.getItem('@token');
+
+
+    try {
+      const response = await blogFetch.get(`/user/getUser/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      
+      const data = response.data;
+      setname(data.name);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+   useEffect(() => {
+     getUserName();
+   }, []);
+
   return (
     <View style={{ flexGrow: 1 }}>
+
+      
       <ThemedView style={styles.container}>
         <ThemedView style={styles.titleContainer}>
           <ThemedText type="title" style={styles.welcomeText}>
             BEM VINDO(A)!
+          </ThemedText>
+          <ThemedText type="title">
+          {name}
           </ThemedText>
         </ThemedView>
 
@@ -124,11 +154,13 @@ export default function HomeScreen() {
 
 const styles = StyleSheet.create({
   titleContainer: {
-    flexDirection: "row",
+    width:300,
+    flexDirection: 'column',
     alignItems: "center",
     gap: 12,
     marginTop: 30,
     backgroundColor: "#EBBA2D",
+
   },
   stepContainer: {
     gap: 12,
@@ -200,6 +232,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     fontSize: 26,
-    marginBottom: 40,
+
   },
 });

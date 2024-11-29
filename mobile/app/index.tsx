@@ -22,13 +22,9 @@ export default function HomeScreen() {
         email: email,
         password: password,
       });
-
       const data = response.data;
-
-      // console.log(data.message)
-      console.log(JSON.stringify(data));
-      await AsyncStorage.setItem("@token", JSON.stringify(data.token));
-      await AsyncStorage.setItem("@id", JSON.stringify(data.id));
+      await AsyncStorage.setItem("@token", data.token);
+      await AsyncStorage.setItem("@id", data.id);
       await AsyncStorage.setItem("@role", JSON.stringify(data.role));
 
       setEmail("");
@@ -80,7 +76,7 @@ export default function HomeScreen() {
             if (password.length < 6) {
               setPasswordError("Senha muito curta");
             } else {
-              router.push("/home");
+              handleLogin()
               //router.push('/home')
             }
           }}
