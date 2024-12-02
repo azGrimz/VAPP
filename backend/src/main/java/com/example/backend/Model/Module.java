@@ -19,8 +19,8 @@ public class Module {
     @GeneratedValue(strategy = GenerationType.UUID)
     private String id;
 
-    private String modulo;
-    private double porcentagem;
+    private String module;
+    private Integer porcentagem;
     private String status;
 
     // Relacionamento muitos para um com a tabela users

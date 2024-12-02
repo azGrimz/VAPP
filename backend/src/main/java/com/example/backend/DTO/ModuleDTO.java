@@ -7,7 +7,7 @@ public class ModuleDTO {
 
     private String id;
     private String module;
-    private Double porcentagem;
+    private Integer porcentagem;
     private String status;
     private String userId;
 }

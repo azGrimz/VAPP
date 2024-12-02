@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { useRouter, useLocalSearchParams } from 'expo-router'; 
 import { ThemedText } from "@/components/ThemedText";
@@ -7,8 +7,36 @@ import { Button } from "@rneui/themed";
 
 export default function ResultScreen() {
   const router = useRouter();
-  const { score, total, quizId } = useLocalSearchParams(); // Access score and total from query params
-
+  const { score, total, quizId,title } = useLocalSearchParams(); // Access score and total from query params
+  
+  
+  const insertRatingQuiz = async () => {
+    const id = await AsyncStorage.getItem('@id');
+    const token = await AsyncStorage.getItem('@token');
+    const status = "Concluido"
+    console.log("a")
+    try {
+      console.log("c")
+      const response = await blogFetch.post(`/moduleAPI/createRating/${id}`,{
+        modulo: title,
+        porcentagem: score,
+        status: status,
+      }, {
+        
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      console.log("d")
+      const data = response.data;
+      alert("Parabens Você conseguiu")
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  useEffect(() => {
+    insertRatingQuiz();
+  }, []);
   return (
     <SafeAreaView>
       <View style={styles.container}>
@@ -17,11 +45,11 @@ export default function ResultScreen() {
         </ThemedText>
 
         <View style={styles.stepContainer}>
-      <ThemedText style={styles.result}>You scored {score} out of {total}.</ThemedText>
+      <ThemedText style={styles.result}>Você acertou {score} / {total} do quiz {title}.</ThemedText>
         </View>
         <View style={styles.stepContainer}>
         <Button
-              title="INICIAR QUIZ"
+              title="FINALIZAR"
               size="lg"
               color="#1E45B9"
               radius="lg"

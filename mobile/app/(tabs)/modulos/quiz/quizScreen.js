@@ -4,7 +4,8 @@ import { useRouter, useLocalSearchParams } from 'expo-router';
 import quizzes from './quizData';  // Import quiz data
 import { ThemedText } from "@/components/ThemedText";
 import { Divider } from '@rneui/themed';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import blogFetch from '../../../../axios/config';
 export default function QuizScreen() {
   const router = useRouter();
   const { quizId } = useLocalSearchParams(); // Get quizId from query parameters
@@ -15,6 +16,30 @@ export default function QuizScreen() {
   const [questionNumber, setQuestionNumber] = useState(1);
   const [selectedOption, setSelectedOption] = useState(null);
   const [score, setScore] = useState(0);  // Use state for score
+  const [QuizTitle,setQuiztitle] = useState("")
+
+
+  const insertRatingQuiz = async (title,finalScore) => {
+    const id = await AsyncStorage.getItem('@id');
+    const token = await AsyncStorage.getItem('@token');
+
+    try {
+
+      const response = await blogFetch.post(`/moduleAPI/createRating/${id}`,{
+        module: title,
+        porcentagem: finalScore,
+        status: "Concluido",
+      }, {
+        
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      const data = response.data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   // Fetch the quiz data on component mount
   useEffect(() => {
@@ -54,11 +79,12 @@ export default function QuizScreen() {
       const finalScore = selectedOption === quiz.questions[currentQuestionIndex].correctAnswer
        ? score + 1 : score;
       
-      if (finalScore <= 3) {
-        router.push(`./badResultScreen?score=${finalScore}&total=${quiz.questions.length}&quizId=${quizId}`);
+      if (finalScore < 3) {
+        router.push(`./badResultScreen?score=${finalScore}&total=${quiz.questions.length}&quizId=${quizId}&title=${quiz.title}`);
       }
       else{
-        router.push(`./goodResultScreen?score=${finalScore}&total=${quiz.questions.length}&quizId=${quizId}`);
+        router.push(`./goodResultScreen?score=${finalScore}&total=${quiz.questions.length}&quizId=${quizId}&title=${quiz.title}`);
+        insertRatingQuiz(quiz.title,finalScore)
       }
     }
   };

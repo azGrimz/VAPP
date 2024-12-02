@@ -7,7 +7,7 @@ import { Button } from "@rneui/themed";
 
 export default function ResultScreen() {
   const router = useRouter();
-  const { score, total, quizId } = useLocalSearchParams(); // Access score and total from query params
+  const { score, total, quizId,title } = useLocalSearchParams(); // Access score and total from query params
 
   return (
     <SafeAreaView>
@@ -17,7 +17,7 @@ export default function ResultScreen() {
         </ThemedText>
 
         <View style={styles.stepContainer}>
-      <ThemedText style={styles.result}>You scored {score} out of {total}.</ThemedText>
+      <ThemedText style={styles.result}>Você acertou {score}/{total} do quiz {title}.</ThemedText>
         </View>
         <View style={styles.stepContainer}>
         <Button

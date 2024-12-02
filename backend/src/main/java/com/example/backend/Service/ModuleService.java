@@ -26,7 +26,7 @@ public class ModuleService {
         Optional<User> existUser = userRepository.findById(moduleDTO.getUserId());
         User user = existUser.get();
         Module module = new Module();
-        module.setModulo(moduleDTO.getModule());
+        module.setModule(moduleDTO.getModule());
         module.setPorcentagem(moduleDTO.getPorcentagem());
         module.setStatus(moduleDTO.getStatus());
         module.setUser(user);
