@@ -12,6 +12,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,7 +31,7 @@ public class FeedbackService {
         User user = existUser.get();
         Feedback feedback = new Feedback();
         feedback.setDescricao(feedbackDTO.getDescricao());
-        feedback.setData(feedbackDTO.getData());
+        feedback.setData(new Date()); // Define a data atual
         feedback.setUser(user);
 
         Feedback createFeedback = feedbackRepository.save(feedback);
